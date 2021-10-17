@@ -1,6 +1,6 @@
 # GTA Witness Protection Bot
 
-[![Gitmoji](https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square)](http://gitmoji.dev/) [![Commit Activity](https://img.shields.io/github/commit-activity/w/xMdb/gta-witness-protection-bot)](https://github.com/xMdb/gta-witness-protection-bot/commits/main/)
+[![Gitmoji](https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square)](http://gitmoji.dev/) [![Commit Activity](https://img.shields.io/github/commit-activity/w/xMdb/gta-witness-protection-bot)](https://github.com/xMdb/gta-witness-protection-bot/commits/master/)
 
 This is a simple bot that lets people know that Micheal was not in witness protection.
 
@@ -50,4 +50,4 @@ BOT_TOKEN=Bot token from Discord Developer Portal
 
 ## License
 
-GTA Witness Protection Bot is open-sourced software licensed under the [MIT License](https://github.com/xMdb/gta-witness-protection-bot/blob/main/LICENSE).
+GTA Witness Protection Bot is open-sourced software licensed under the [MIT License](https://github.com/xMdb/gta-witness-protection-bot/blob/master/LICENSE).

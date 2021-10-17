@@ -4,6 +4,8 @@
 
 This is a simple bot that lets people know that Micheal was not in witness protection.
 
+![image](https://user-images.githubusercontent.com/46137770/137623032-1d6bbf79-e9d8-4a15-8499-d20f80f06fd6.png)
+
 # Invite the bot here!
 https://discord.com/oauth2/authorize?client_id=899155555208290324&permissions=274878188608&scope=bot
 

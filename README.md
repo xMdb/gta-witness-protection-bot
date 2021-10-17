@@ -44,10 +44,8 @@ npm install
 5. Make a .env file in the directory and include the following value:
 ```
 BOT_TOKEN=Bot token from Discord Developer Portal
-ERROR_WEBHOOK=Webhook URL for logging errors
 ```
-6. Edit the [config.js](https://github.com/xMdb/gta-witness-protection-bot/blob/main/config.js) file to fit your own needs
-7. Start the bot by using either `npm start`, `npm start:pm2`, or `npm start:nodemon` for starting with vanilla Node or your favourite process manager.
+6. Start the bot by using either `npm start`, `npm start:pm2`, or `npm start:nodemon` for starting with vanilla Node or your favourite process manager.
 
 ## License
 

@@ -1,0 +1,17 @@
+{
+   "compilerOptions": {
+      "target": "esnext",
+      "module": "commonjs",
+      "types": ["node"],
+      "strictFunctionTypes": true,
+      "esModuleInterop": true,
+      "noImplicitAny": true,
+      "removeComments": true,
+      "outDir": "dist",
+      "noImplicitThis": true,
+      "baseUrl": ".",
+      "strict": true,
+      "inlineSourceMap": true
+   },
+   "exclude": ["node_modules", "**/node_modules/*", "prettier.config.js"]
+}

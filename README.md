@@ -15,7 +15,6 @@ https://discord.com/oauth2/authorize?client_id=899155555208290324&permissions=27
 - [Installation](#installation)
   - [Prerequisites](#prerequisites)
   - [Setup Guide](#setup-guide)
-- [Acknowledgements](#acknowledgements)
 - [License](#license)
 
 <hr>

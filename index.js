@@ -1,29 +1,28 @@
 require('dotenv').config();
-import chalk = require('chalk');
-import { Client, Intents, Message } from 'discord.js';
-const bot: Client = new Client({
+const { Client, Intents } = require('discord.js');
+const db = require('quick.db');
+const consola = require('consola');
+const bot = new Client({
    allowedMentions: { parse: ['users', 'roles'], repliedUser: true },
    intents: [Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILDS],
 });
 
 bot.on('ready', () => {
-   console.log(chalk.greenBright('Success! Discord bot is now online.'));
-   bot.user!.setActivity('DarkViperAU', {
+   consola.success(`${bot.user.username} is now online!`);
+   bot.user.setActivity('DarkViperAU', {
       type: 'WATCHING',
    });
 });
 
 bot.on('guildCreate', (guild) => {
-   console.log(
-      chalk.greenBright(`New guild joined: "${guild.name}" (id: ${guild.id}). This guild has ${guild.memberCount} members!`)
-   );
+   consola.info(`New guild joined: "${guild.name}" (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
 });
 
 bot.on('guildDelete', (guild) => {
-   console.log(chalk.greenBright(`Bot removed from: "${guild.name}" (id: ${guild.id})`));
+   consola.info(`Bot removed from: "${guild.name}" (id: ${guild.id})`);
 });
 
-const names: string[] = [
+const names = [
    'Micheal',
    'Michael',
    'De Santa',
@@ -52,7 +51,7 @@ const names: string[] = [
    'The Sneaky Dude',
 ];
 
-const endings: string[] = [
+const endings = [
    'in witness protection',
    'is still in witness protection',
    'is in witness protection',
@@ -60,8 +59,11 @@ const endings: string[] = [
    'has witness protection',
 ];
 
-function tellPersonTheyAreWrong(message: any) {
-   return message.channel.send('Witness protection for what?! No one was convicted of anything!');
+function tellPersonTheyAreWrong(message) {
+   message.channel.send('Witness protection for what?! No one was convicted of anything!');
+   db.set('timesUsed', db.get('timesUsed') + 1);
+   consola.info(`⭐ Bot was used (+1). Total: ${db.get('timesUsed')}.`);
+   consola.info(`Message sent in "${message.guild.name}" (${message.guild.memberCount}). In response to "${message.content}".`);
 }
 
 bot.on('messageCreate', (message) => {
@@ -77,7 +79,7 @@ bot.on('messageCreate', (message) => {
    }
 });
 
-process.on('uncaughtException', (err) => console.error(err)).on('unhandledRejection', (err) => console.error(err));
+process.on('uncaughtException', (err) => consola.error(err)).on('unhandledRejection', (err) => consola.error(err));
 
 // —— Login the bot
 bot.login(process.env.BOT_TOKEN);

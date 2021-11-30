@@ -1,6 +1,6 @@
 {
    "name": "gta-witness-protection-bot",
-   "version": "1.0.0",
+   "version": "1.0.1",
    "description": "",
    "author": "xMdb",
    "license": "MIT",
@@ -9,22 +9,17 @@
       "url": "https://github.com/xMdb/gta-witness-protection-bot/issues"
    },
    "scripts": {
-      "start": "npm run build && node dist/index",
-      "start:pm2": "npm run build && pm2 start dist/index.js",
-      "start:nodemon": "npm run build && nodemon dist/index",
+      "start": "node index",
+      "start:pm2": "pm2 start index.js",
+      "start:nodemon": "nodemon index.js",
       "dev": "npm run start",
-      "build": "tsc",
       "test": "echo No tests available",
       "lint": "npx eslint ."
    },
    "dependencies": {
-      "chalk": "^4.1.2",
+      "consola": "^2.15.3",
       "discord.js": "^13.2.0",
       "dotenv": "^10.0.0",
-      "node-cmd": "^5.0.0",
-      "typescript": "^4.4.4"
-   },
-   "devDependencies": {
-      "@types/node": "^16.11.1"
+      "quick.db": "^7.1.3"
    }
 }

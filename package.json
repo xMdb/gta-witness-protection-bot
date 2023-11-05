@@ -10,16 +10,15 @@
    },
    "scripts": {
       "start": "node index",
-      "start:pm2": "pm2 start index.js",
+      "start:pm2": "pm2 start index.js --name witness-protection",
       "start:nodemon": "nodemon index.js",
       "dev": "npm run start",
       "test": "echo No tests available",
       "lint": "npx eslint ."
    },
    "dependencies": {
-      "consola": "^2.15.3",
-      "discord.js": "^13.3.1",
-      "dotenv": "^10.0.0",
-      "quick.db": "^7.1.3"
+      "consola": "^3.2.3",
+      "discord.js": "^14.13.0",
+      "dotenv": "^16.3.1"
    }
 }

@@ -1,24 +1,23 @@
 require('dotenv').config();
-const { Client, Intents } = require('discord.js');
-const db = require('quick.db');
+const { Client, Events, GatewayIntentBits, ActivityType } = require('discord.js');
 const consola = require('consola');
 const bot = new Client({
    allowedMentions: { parse: ['users', 'roles'], repliedUser: true },
-   intents: [Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILDS],
+   intents: [GatewayIntentBits.GuildMessages, GatewayIntentBits.Guilds, GatewayIntentBits.MessageContent],
 });
 
-bot.on('ready', () => {
+bot.once(Events.ClientReady, () => {
    consola.success(`${bot.user.username} is now online!`);
    bot.user.setActivity('DarkViperAU', {
-      type: 'WATCHING',
+      type: ActivityType.Watching,
    });
 });
 
-bot.on('guildCreate', (guild) => {
+bot.on(Events.GuildCreate, (guild) => {
    consola.info(`New guild joined: "${guild.name}" (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
 });
 
-bot.on('guildDelete', (guild) => {
+bot.on(Events.GuildDelete, (guild) => {
    consola.info(`Bot removed from: "${guild.name}" (id: ${guild.id})`);
 });
 
@@ -60,13 +59,12 @@ const endings = [
 ];
 
 function tellPersonTheyAreWrong(message) {
-   message.channel.send('Witness protection for what?! No one was convicted of anything!');
-   db.set('timesUsed', db.get('timesUsed') + 1);
-   consola.info(`⭐ Bot was used (+1). Total: ${db.get('timesUsed')}.`);
+   message.reply('Witness protection for what?! No one was convicted of anything!');
+   consola.info(`⭐ Bot was used.`);
    consola.info(`Message sent in "${message.guild.name}" (${message.guild.memberCount}). In response to "${message.content}".`);
 }
 
-bot.on('messageCreate', (message) => {
+bot.on(Events.MessageCreate, (message) => {
    if (message.author.bot) return;
    for (const name in names) {
       for (const ending in endings) {

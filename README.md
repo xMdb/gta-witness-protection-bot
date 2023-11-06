@@ -8,7 +8,7 @@ This is a simple bot that lets people know that Micheal was not in witness prote
 
 ## Invite the bot here!
 
-https://discord.com/oauth2/authorize?client_id=899155555208290324&permissions=274878188608&scope=bot
+<https://discord.com/oauth2/authorize?client_id=899155555208290324&permissions=274878188608&scope=bot>
 
 ---
 
